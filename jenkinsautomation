@@ -13,7 +13,7 @@ pipeline {
         
         stage('Releasing the package') {
             steps {
-            archiveArtifacts artifacts: '/*.jar', followSymlinks: false            
+            archiveArtifacts artifacts: 'target//*.jar', followSymlinks: false            
         }
 }
 }
