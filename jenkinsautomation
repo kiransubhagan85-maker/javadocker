@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Install Maven and build the package') {
+            steps {
+            sh '''
+            sudo dnf install maven -y
+            mvn clean package'''
+            }
+            
+        }
+        
+        stage('Releasing the package') {
+            steps {
