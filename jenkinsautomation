@@ -13,7 +13,7 @@ pipeline {
         
         stage('Releasing the package') {
             steps {
-            archiveArtifacts artifacts: '/root/javadocker/*.jar', followSymlinks: false            
+            archiveArtifacts artifacts: '/*.jar', followSymlinks: false            
         }
 }
 }
