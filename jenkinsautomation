@@ -22,6 +22,13 @@ pipeline {
         sh '. /etc/profile.d/sonar-scanner.sh'
     }
 }
+
+        stage('Analyzing Code Quality') {
+            steps {
+            // Step to analyze code quality with SonarQube
+            sh '/opt/sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=kiransubhagan85-maker_mytestpoject -Dsonar.organization=kiransubhagan85-maker -Dsonar.qualitygate.wait=false -Dsonar.qualitygate.timeout=300 -Dsonar.sources=src/main/java/ -Dsonar.java.binaries=target/classes -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=3d0b3a1dfbcd41906dcbbebd9fc0c71392e88ad1'
+            }
+            }
             
         
         
