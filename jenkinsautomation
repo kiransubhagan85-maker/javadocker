@@ -8,6 +8,7 @@ pipeline {
             sudo dnf install maven -y
             mvn clean package'''
             }
+}
     stage('Install sonarqube cli') {
         steps {
         // Step to install SonarQube CLI
@@ -22,7 +23,7 @@ pipeline {
     }
 }
             
-        }
+        
         
         stage('Releasing the package') {
             steps {
